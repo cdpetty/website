@@ -1,0 +1,25 @@
+html
+  head
+    title Website
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/posts.css')
+  body
+    .nav_bar
+      a(href='/posts')
+        .nav_element.nav_left
+          span.nav_text Posts
+      a(href='/about')
+        .nav_element.nav_left
+          span.nav_text About
+      a(href='/projects')
+        .nav_element.nav_left
+          span.nav_text Projects
+      a(href='/clayton')
+        .nav_element.nav_left
+          span.nav_text Clayton
+      a(href='/')
+        .nav_element.nav_right.logo
+            span.logo_text C
+
+
+    block content

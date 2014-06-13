@@ -1,0 +1,28 @@
+.posts_wrapper{
+  margin: 70px auto;
+  width: 80%;
+  min-width:632px;
+  max-width: 676px;
+  /*background-color: rgb(88, 84, 84);*/
+}
+
+.post{
+  width: 44%;
+  display:inline-table;
+  text-align: center;
+  margin: 40px 3%;
+  word-break: break-word;
+}
+
+.post_name{
+  color: rgb(0, 0, 170);
+  font-size: 34px;
+  font-family:vollkorn;
+}
+
+.post_subtitle{
+  font-size: 20px;
+  color: #999;
+  font-style: italic;
+  display:block;
+}
