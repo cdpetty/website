@@ -34,6 +34,16 @@ app.get('/', function(req,res){
 app.get('/posts', function(req,res){
   res.render('posts_page');
 });
+app.get('/about', function(req,res){
+  res.render('about_page');
+});
+app.get('/projects', function(req,res){
+  res.render('projects_page');
+});
+app.get('/clayton', function(Req,res){
+  res.render('clayton_page');
+});
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

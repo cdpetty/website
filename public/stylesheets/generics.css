@@ -1,0 +1,78 @@
+.title{
+  color:rgb(0, 0, 170);
+  font-size: 34px; 
+}
+.title:hover{
+  color:black;
+  cursor: default;
+}
+
+a{
+  text-decoration:none;
+  color: rgb(0, 0, 170);
+}
+
+a:hover{
+  color: black;
+}
+
+.inverse{
+  color:black;
+}
+.inverse:hover{
+  color:rgb(0,0,170);
+}
+
+@font-face {
+	font-family: vollkorn;
+	src: url('/fonts/vollkorn.ttf');
+}
+
+.maroon{
+  color:maroon;
+}
+
+.vert{
+  height:400px;
+  background-color:rgb(0,0,170);
+  width:10px;
+  display:inline;
+}
+
+.inline{
+  
+}
+
+.close_container{
+  margin: 0 auto 67px auto;
+  width: 600px;
+  font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color:#999;
+}
+
+.close{
+  height: 3px;
+  background-color: black;
+  border-top: 5px solid rgb(0,0,170);
+}
+
+.close_note_left{
+  float:left;
+}
+
+.close_note_right{
+  float:right;
+}
+
+.bar_container{
+  margin: 0 auto 0px auto;
+  width: 600px;
+  font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color:#999;
+}
+
+.bar{
+  height: 3px;
+  background-color: black;
+  border-top: 5px solid rgb(0,0,170);
+}

@@ -1,0 +1,23 @@
+.cdp{
+  margin:70px auto;
+}
+.front_container{
+  width:100%;
+  text-align:-webkit-center;
+  margin:186px auto 0px auto;
+} 
+
+.short_bio{
+  margin-top:10px;
+  width: 550px;
+}
+
+.blurb{
+  display:block;
+  font-size:23px;
+  margin-bottom:20px;
+}
+
+#large_blurb{
+  font-size:40px;
+}

@@ -1,20 +1,8 @@
 body {
   /*background-color: #333;*/
   background-color:#fdfdfd;
-  font-family: "ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-
-@font-face {
-	font-family: vollkorn;
-	src: url('/fonts/vollkorn.ttf');
-}
-
-a{
-  text-decoration:none;
-  color: inherit;
-}
-a:hover{
-  color: black;
+  /*font-family: "ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;*/
+  font-family:vollkorn;
 }
 
 .logo{
@@ -39,12 +27,12 @@ a:hover{
   right:0;
 }
 .nav_text{
-  font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 30px;
   color: #999;
 }
 
 .nav_element{
+  font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
   display:inline;
   padding: 3px 7px;
   cursor:pointer;
@@ -62,3 +50,5 @@ a:hover{
   float:right;
   border-left: 2px solid black;
 }
+
+

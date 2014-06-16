@@ -1,0 +1,39 @@
+
+.about_wrapper{
+  margin: 70px auto 30px auto;
+  min-width: 523px;
+  max-width: 710px; 
+  text-align:center;
+}
+
+.about_text{
+  /*margin-left:30px;*/
+  text-align:left;
+}
+
+.about_subtitle{
+  color: #999;
+  font-size: 23px;
+}
+.about_description{
+  font-size:19px;
+}
+
+.big_logo{
+  width: 248;
+  background-color: rgb(0,0,170);
+  height: 228px;
+  text-align: center;
+  padding: 24px;
+  display:table-cell;
+}
+
+.big_logo_text{
+  font-size: 185px;
+  font-family: "ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+
+.darker{
+  background-color: rgb(0,0,126);
+}
