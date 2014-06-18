@@ -44,7 +44,7 @@ a:hover{
 }
 
 .close_container{
-  margin: 0 auto 67px auto;
+  margin: 0 auto 31px auto;
   width: 600px;
   font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
   color:#999;
@@ -75,4 +75,9 @@ a:hover{
   height: 3px;
   background-color: black;
   border-top: 5px solid rgb(0,0,170);
+}
+#aggie_logo{
+  width:76px;
+  margin-top: 16px;
+  margin-left: 180px;
 }

@@ -5,7 +5,6 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
@@ -28,21 +27,11 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', function(req,res){
-  res.render('front_page');
-});
-app.get('/posts', function(req,res){
-  res.render('posts_page');
-});
-app.get('/about', function(req,res){
-  res.render('about_page');
-});
-app.get('/projects', function(req,res){
-  res.render('projects_page');
-});
-app.get('/clayton', function(Req,res){
-  res.render('clayton_page');
-});
+app.get('/', routes.index);
+app.get('/posts', routes.posts);
+app.get('/about', routes.about);
+app.get('/projects', routes.projects);
+app.get('/clayton', routes.clayton);
 
 
 http.createServer(app).listen(app.get('port'), function(){
