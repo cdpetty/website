@@ -32,6 +32,7 @@ app.get('/posts', routes.posts);
 app.get('/about', routes.about);
 app.get('/projects', routes.projects);
 app.get('/clayton', routes.clayton);
+//app.get('/create_post', routes.create_post);
 
 
 http.createServer(app).listen(app.get('port'), function(){

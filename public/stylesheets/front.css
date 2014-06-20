@@ -4,12 +4,13 @@
 .front_container{
   width:100%;
   text-align:-webkit-center;
-  margin:186px auto 0px auto;
+  margin:158px auto 10px auto;
 } 
 
 .short_bio{
-  margin-top:10px;
   width: 550px;
+  margin-bottom: 50px;
+  margin-top: 27px;
 }
 
 .blurb{
