@@ -22,3 +22,7 @@ exports.projects = function(req,res){
 exports.clayton = function(req,res){
   res.render('clayton_page');
 };
+
+exports.post = function(req,res){
+  res.render('post_page');
+};
