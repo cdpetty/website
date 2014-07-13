@@ -37,3 +37,7 @@
 .darker{
   background-color: rgb(0,0,126);
 }
+
+.right{
+  text-align:right; 
+}
