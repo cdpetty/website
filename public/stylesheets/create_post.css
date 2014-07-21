@@ -1,0 +1,26 @@
+.write_container{
+  margin: 70px auto 28px auto;
+  width:350px;
+}
+#create_input{
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 25px;
+}
+#left{
+  float:left;
+}
+
+#right{
+  float:right;
+  margin-top:10px;
+}
+
+
+.label{
+  font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color:#999;
+  font-size:25px;
+  margin-bottom:20px;
+}
