@@ -36,6 +36,7 @@ exports.save_post = function(title, description, body, callback){
       fs.writeFile(file_path, JSON.stringify(post_object), function(err){
         if (err) callback(err);
         else{
+          callback();
         }
       });
     }
@@ -64,4 +65,8 @@ exports.edit_post = function(title, edit_item, replacement, callback){
   else if (edit_item === 'body'){
     
   }
+};
+
+function add_post_to_txt(title, description){
+  `fs.open('
 };
