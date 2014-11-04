@@ -16,17 +16,18 @@ exports.get_post = function(title, callback){
       fs.readFile(file_path, function (err, data) {
         if (err) callback(err);
         else callback(null, JSON.parse(data));
-      }); 
+      });
     }
     else{
       callback('Error: post does not exist');
-    }          
+    }
   });
 
 };
 
 exports.save_post = function(title, description, body, callback){
-  var file_path = path.resolve('./storage/store', title);
+  var file_path = path.resolve('./store', title);
+  var general_posts_path = path.resolve('./store', 'posts.txt');
   var post_object = { title: title, description: description, body: body, date: new Date() }
   fs.exists(file_path, function(exists){
     if (exists){
@@ -36,6 +37,9 @@ exports.save_post = function(title, description, body, callback){
       fs.writeFile(file_path, JSON.stringify(post_object), function(err){
         if (err) callback(err);
         else{
+          fs.open(general_posts_path, 'r+', function(err){
+            var current_files = fs.read();
+          });
           callback();
         }
       });
@@ -57,13 +61,13 @@ exports.delete_post = function(title, callback){
 
 exports.edit_post = function(title, edit_item, replacement, callback){
   if (edit_item === 'title'){
-    
+
   }
   else if (edit_item === 'description'){
-    
+
   }
   else if (edit_item === 'body'){
-    
+
   }
 };
 
