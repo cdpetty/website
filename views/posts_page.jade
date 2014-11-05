@@ -2,67 +2,73 @@ extends layout
 
 block content
   .posts_wrapper
-    .post
-      span.post_name
-        a(href='/post') My First Post
-        span.post_subtitle The post of a lifetime
-    .post
-      span.post_name 
-        a(href='/post') Python Globals
-        span.post_subtitle How do they work?
-    .post
-      span.post_name
-        a(href='/post') Why I like Cars
-        span.post_subtitle They are great
-    .post
-      span.post_name 
-        a(href='/post')  Another Awesome Post
-        span.post_subtitle Absolutely yes.
-    .post
-      span.post_name
-        a(href='/post') My First Post
-        span.post_subtitle The post of a lifetime
-    .post
-      span.post_name 
-        a(href='/post') Python Globals
-        span.post_subtitle How do they work?
-    .post
-      span.post_name
-        a(href='/post') Why I like Cars
-        span.post_subtitle They are great
-    .post
-      span.post_name 
-        a(href='/post')  Another Awesome Post
-        span.post_subtitle Absolutely yes.
-    .post
-      span.post_name
-        a(href='/post') My First Post
-        span.post_subtitle The post of a lifetime
-    .post
-      span.post_name 
-        a(href='/post') Python Globals
-        span.post_subtitle How do they work?
-    .post
-      span.post_name
-        a(href='/post') Why I like Cars
-        span.post_subtitle They are great
-    .post
-      span.post_name 
-        a(href='/post')  Another Awesome Post
-        span.post_subtitle Absolutely yes.
-    .post
-      span.post_name
-        a(href='/post') My First Post
-        span.post_subtitle The post of a lifetime
-    .post
-      span.post_name 
-        a(href='/post') Python Globals
-        span.post_subtitle How do they work?
-    .post
-      span.post_name
-        a(href='/post') Why I like Cars
-        span.post_subtitle They are great
-    .post
-      span.post_name 
-        a(href='/post')  Another Awesome Post
-        span.post_subtitle Absolutely yes.
+    each val, index in posts 
+      .post
+        span.post_name
+          a(href='/' + index)=val.title
+          span.post_subtitle=val.description
+    //
+      .post
+        span.post_name
+          a(href='/post') My First Post
+          span.post_subtitle The post of a lifetime
+      .post
+        span.post_name 
+          a(href='/post') Python Globals
+          span.post_subtitle How do they work?
+      .post
+        span.post_name
+          a(href='/post') Why I like Cars
+          span.post_subtitle They are great
+      .post
+        span.post_name 
+          a(href='/post')  Another Awesome Post
+          span.post_subtitle Absolutely yes.
+      .post
+        span.post_name
+          a(href='/post') My First Post
+          span.post_subtitle The post of a lifetime
+      .post
+        span.post_name 
+          a(href='/post') Python Globals
+          span.post_subtitle How do they work?
+      .post
+        span.post_name
+          a(href='/post') Why I like Cars
+          span.post_subtitle They are great
+      .post
+        span.post_name 
+          a(href='/post')  Another Awesome Post
+          span.post_subtitle Absolutely yes.
+      .post
+        span.post_name
+          a(href='/post') My First Post
+          span.post_subtitle The post of a lifetime
+      .post
+        span.post_name 
+          a(href='/post') Python Globals
+          span.post_subtitle How do they work?
+      .post
+        span.post_name
+          a(href='/post') Why I like Cars
+          span.post_subtitle They are great
+      .post
+        span.post_name 
+          a(href='/post')  Another Awesome Post
+          span.post_subtitle Absolutely yes.
+      .post
+        span.post_name
+          a(href='/post') My First Post
+          span.post_subtitle The post of a lifetime
+      .post
+        span.post_name 
+          a(href='/post') Python Globals
+          span.post_subtitle How do they work?
+      .post
+        span.post_name
+          a(href='/post') Why I like Cars
+          span.post_subtitle They are great
+      .post
+        span.post_name 
+          a(href='/post')  Another Awesome Post
+          span.post_subtitle Absolutely yes.

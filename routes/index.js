@@ -2,13 +2,17 @@
 /*
  * GET home page.
  */
+var storage = require('../storage');
 
 exports.index = function(req, res){
   res.render('front_page');
 };
 
 exports.posts =  function(req,res){
-  res.render('posts_page');
+  storage.get_posts(function(err, posts){
+    if (err) res.send(err);
+    res.render('posts_page', {posts: posts});
+  });
 };
 
 exports.about = function(req,res){
@@ -41,8 +45,6 @@ exports.create_post_post = function(req, res){
           res.send('Error reading file from user: ' + err);
         }
         else{
-          console.log(data);
-          console.log(data.toString());
           storage.save_post(req.body.title, req.body.description, data.toString(), function(err){
             if (err){
               res.send('Error saving post: ' + err);
