@@ -2,7 +2,8 @@
 /*
  * GET home page.
  */
-var storage = require('../storage');
+var storage = require('../storage'),
+    markdown = require('markdown').markdown;
 
 exports.index = function(req, res){
   res.render('front_page');
@@ -28,7 +29,11 @@ exports.clayton = function(req,res){
 };
 
 exports.post = function(req,res){
-  res.render('post_page');
+  var post_name = req.params.post_name; 
+  storage.get_post(post_name, function(err, post){
+    if (err) res.send(err);
+    res.render('post_page', {title: post.title, description:post.description, body: markdown.toHTML(post.body)});
+  });
 };
 
 exports.create_post = function(req, res){

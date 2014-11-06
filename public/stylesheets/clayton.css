@@ -1,22 +1,35 @@
 .clayton_container{
   margin: 70px auto 30px auto;
-  min-width: 523px;
+  min-width: 696px;
   max-width: 710px;
 }
+.divider{
+  height:81px;
+  font-size:51px;
+  text-align:center;
+}
 .clayton_intro{
-  
+  border: 6px solid rgb(0, 0, 170);
+  padding: 8px;  
+  text-align:center;
 }
 .clayton_intro_container{
-  
+  width: 491px;
+  height: 171px;
+  float: left;
 }
 .clayton_topic_title{
   font-size:24px;
 }
 .clayton_topic_body{
-
+  margin-bottom:10px;
 }
+#first{
+  font-size:23px;
+}
+
 #clayton_pic{
-  width:247px;
+  width:194px;
 }
 .picture{
   float:right;

@@ -33,7 +33,7 @@ app.get('/posts', routes.posts);
 app.get('/about', routes.about);
 app.get('/projects', routes.projects);
 app.get('/clayton', routes.clayton);
-app.get('/post', routes.post);
+app.get('/post/:post_name', routes.post);
 app.get('/create_post', routes.create_post);
 app.post('/create_post', routes.create_post_post);
 

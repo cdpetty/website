@@ -5,7 +5,7 @@ block content
     each val, index in posts 
       .post
         span.post_name
-          a(href='/' + index)=val.title
+          a(href='/post/' + index)=val.title
           span.post_subtitle=val.description
     //
       .post

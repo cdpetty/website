@@ -2,10 +2,11 @@ extends layout
 
 block content
   .clayton_container
-    span.title Me, Myself, and I
+    //-span.title Me, Myself, and I
     .clayton_wrapper
       .clayton_intro_container
-        .clayton_intro My name is Clayton Petty. I am from Austin, Texas.  I am currently a freshman at Texas A&M pursing a bachelors in Computer Science. Below is a little more about what I do.
+        .divider Me, Myself, and I
+        .clayton_intro <span id='first'>My name is <a>Clayton Petty</a>.</span> <br>I am a freshman at Texas A&M pursuing a BS in Computer Science. <br>Below is a little more about what I do.
       .picture
         img(src='/images/clayton01.jpg')#clayton_pic
       .clayton_topic_container#Music
