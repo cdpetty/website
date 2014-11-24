@@ -11,8 +11,9 @@ exports.index = function(req, res){
 
 exports.posts =  function(req,res){
   storage.get_posts(function(err, posts){
+    console.log('HEREERERERE');
     if (err) res.send(err);
-    res.render('posts_page', {posts: posts});
+    res.render('posts_page', { posts: posts });
   });
 };
 
