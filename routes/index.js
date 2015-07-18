@@ -2,17 +2,17 @@
 /*
  * GET home page.
  */
-var storage = require('../storage'),
-    markdown = require('markdown').markdown;
+var storage = require('../storage');
+
 
 exports.index = function(req, res){
   res.render('front_page');
 };
 
 exports.posts =  function(req,res){
-  storage.get_posts(function(err, posts){
+  storage.get_posts(true, function(err, posts){
     console.log('HEREERERERE');
-    if (err) res.send(err);
+    if (err) res.send('Error:' + err);
     res.render('posts_page', { posts: posts });
   });
 };
@@ -30,10 +30,25 @@ exports.clayton = function(req,res){
 };
 
 exports.post = function(req,res){
-  var post_name = req.params.post_name; 
+  var post_name = req.params.post_name;
   storage.get_post(post_name, function(err, post){
     if (err) res.send(err);
-    res.render('post_page', {title: post.title, description:post.description, body: markdown.toHTML(post.body)});
+    else{
+      // console.log(post);
+      // res.json(post);
+      console.log(unescape(post.body));
+      res.render('post_page', post);
+      // res.render('post_page', {title: post.title, description:post.description, body: post.body, time: post.time });
+      // console.log('Post title:', post.title);
+      // console.log('apple');
+      // res.render('post_page', {title: post.title, description:post.description, body: markdown.toHTML(post.body), time: post.time });
+      // res.render('post_page', {title: post.title, description:post.description, body: marked(post.body), time: post.time });
+      // res.send('apple');
+      // marked(post.body, function (err, content) {
+      //   if (err) throw err;
+      //   res.render('post_page', {title: post.title, description:post.description, body: content, time: post.time });
+      // });
+    }
   });
 };
 
@@ -42,10 +57,10 @@ exports.create_post = function(req, res){
 };
 
 exports.create_post_post = function(req, res){
+  var storage = require('../storage'),
+    fs = require('fs');
   if (req.files.body && req.body.title && req.body.description && req.body.password){
     if (req.body.password == 'pass'){
-      var storage = require('../storage'),
-        fs = require('fs');
       fs.readFile(req.files.body.path, function (err, data) {
         if (err){
           res.send('Error reading file from user: ' + err);
@@ -65,5 +80,10 @@ exports.create_post_post = function(req, res){
     else{
       res.send('Password: ' + req.body.password + ' was incorrect.');
     }
+  } else if (req.body.delete){
+      storage.delete_post(req.body.delete, function(err){
+        if (err) res.send('Error deleting post:' + err);
+        else res.send('Post: ' + req.body.delete + ' deleted.')
+      });
   }
 };

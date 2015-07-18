@@ -1,6 +1,6 @@
 .title{
   color:rgb(0, 0, 170);
-  font-size: 34px; 
+  font-size: 34px;
 }
 .title:hover{
   color:black;
@@ -40,12 +40,12 @@ a:hover{
 }
 
 .inline{
-  
+
 }
 
 .close_container{
   margin: 0 auto 31px auto;
-  width: 600px;
+  width: 700px;
   font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
   color:#999;
 }
@@ -66,7 +66,7 @@ a:hover{
 
 .bar_container{
   margin: 0 auto 0px auto;
-  width: 600px;
+  width: 700px;
   font-family:"ars-maquette-web",Gotham,Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;
   color:#999;
 }
@@ -79,5 +79,5 @@ a:hover{
 #aggie_logo{
   width:76px;
   margin-top: 16px;
-  margin-left: 180px;
+  margin-left: 220px;
 }

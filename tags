@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+dependencies	package.json	/^  "dependencies": {$/;"	f
+exports.about	routes/index.js	/^};$/;"	f
+exports.clayton	routes/index.js	/^};$/;"	f
+exports.create_post	routes/index.js	/^};$/;"	f
+exports.create_post_post	routes/index.js	/^};$/;"	f
+exports.delete_post	storage/index.js	/^};$/;"	f
+exports.delete_post	storage/index3.js	/^};$/;"	f
+exports.edit_post	storage/index3.js	/^};$/;"	f
+exports.get_post	storage/index.js	/^};$/;"	f
+exports.get_post	storage/index3.js	/^};$/;"	f
+exports.get_posts	storage/index.js	/^var postsPath = path.join(__dirname, 'store\/posts.txt');$/;"	f
+exports.get_posts	storage/index3.js	/^    path = require('path');$/;"	f
+exports.index	routes/index.js	/^    markdown = require('markdown').markdown;$/;"	f
+exports.post	routes/index.js	/^};$/;"	f
+exports.posts	routes/index.js	/^};$/;"	f
+exports.projects	routes/index.js	/^};$/;"	f
+exports.save_post	storage/index.js	/^};$/;"	f
+exports.save_post	storage/index3.js	/^};$/;"	f
+express	package.json	/^    "express": "3.4.8",$/;"	f
+jade	package.json	/^    "jade": "*",$/;"	f
+jsonfile	package.json	/^    "jsonfile": "~2.2.1"$/;"	f
+markdown	package.json	/^    "markdown": "~0.5.0",$/;"	f
+name	package.json	/^  "name": "application-name",$/;"	f
+private	package.json	/^  "private": true,$/;"	f
+scripts	package.json	/^  "scripts": {$/;"	f
+start	package.json	/^    "start": "node app.js"$/;"	f
+version	package.json	/^  "version": "0.0.1",$/;"	f

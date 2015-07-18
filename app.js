@@ -14,7 +14,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.favicon());
+app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -36,6 +36,9 @@ app.get('/clayton', routes.clayton);
 app.get('/post/:post_name', routes.post);
 app.get('/create_post', routes.create_post);
 app.post('/create_post', routes.create_post_post);
+app.get('/resume', function(req,res){
+  res.download(path.join(__dirname, 'Resume/CPetty_Resume.pdf'));
+});
 
 
 http.createServer(app).listen(app.get('port'), function(){
