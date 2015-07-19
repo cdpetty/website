@@ -15,7 +15,13 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon(path.join(__dirname, 'release/imgs/favicon.ico')));
-app.use(express.logger('dev'));
+// app.use(express.logger('dev'));
+app.configure('development', function () {
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+app.configure('production', function () {
+  app.use(express.errorHandler());
+});
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.bodyParser());
