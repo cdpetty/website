@@ -8,4 +8,4 @@ release
 node_modules
 
 # OS X Files
-.DS_Store
+**/.DS_Store
