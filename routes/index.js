@@ -11,7 +11,6 @@ exports.index = function(req, res){
 
 exports.posts =  function(req,res){
   storage.get_posts(true, function(err, posts){
-    console.log('HEREERERERE');
     if (err) res.send('Error:' + err);
     res.render('posts_page', { posts: posts });
   });
@@ -36,7 +35,8 @@ exports.post = function(req,res){
     else{
       // console.log(post);
       // res.json(post);
-      console.log(unescape(post.body));
+      // console.log(unescape(post.body));
+      // post.time = post.time.toDateString();
       res.render('post_page', post);
       // res.render('post_page', {title: post.title, description:post.description, body: post.body, time: post.time });
       // console.log('Post title:', post.title);
@@ -60,7 +60,7 @@ exports.create_post_post = function(req, res){
   var storage = require('../storage'),
     fs = require('fs');
   if (req.files.body && req.body.title && req.body.description && req.body.password){
-    if (req.body.password == 'pass'){
+    if (req.body.password === 'pass'){
       fs.readFile(req.files.body.path, function (err, data) {
         if (err){
           res.send('Error reading file from user: ' + err);

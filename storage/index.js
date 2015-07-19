@@ -30,7 +30,7 @@ exports.get_posts = function(short, callback){
                 // var dateObj = new Date(json[key].time);
                 // delete json[key].time;
                 // json[key].time = dateObj;
-                json[key].time = new Date(json[key].time);
+                json[key].time = new Date(json[key].time).toDateString();
 
             });
             return callback(null, json);
@@ -59,7 +59,8 @@ exports.save_post = function(title, description, body, callback){
               if (err) return callback(err);
               else{
                 // json[title] = { title: title, description: description, body: jsesc(html, {json: true}), time: new Date(Date.now()) }
-                json[title] = { title: title, description: description, body: escape(html), time: new Date(Date.now()) }
+                // json[title] = { title: title, description: description, body: escape(html), time: new Date(Date.now()) }
+                json[title] = { title: title, description: description, body: html, time: new Date(Date.now()) }
                 jsonfile.writeFile(postsPath, json, callback);
               }
             });

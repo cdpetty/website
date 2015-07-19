@@ -1,16 +1,8 @@
 html
   head
-    title Website
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/posts.css')
-    link(rel='stylesheet', href='/stylesheets/about.css')
-    link(rel='stylesheet', href='/stylesheets/generics.css')
-    link(rel='stylesheet', href='/stylesheets/projects.css')
-    link(rel='stylesheet', href='/stylesheets/clayton.css')
-    link(rel='stylesheet', href='/stylesheets/front.css')
-    link(rel='stylesheet', href='/stylesheets/post.css')
-    link(rel='stylesheet', href='/stylesheets/create_post.css')
-    link(rel='stylesheet', href='/stylesheets/pygments.css')
+    title Cdpetty
+    include meta
+    link(rel='stylesheet', href='/css/style.min.css')
   body
     .nav_bar
       a(href='/posts')
@@ -28,7 +20,5 @@ html
       a(href='/')
         .nav_element.nav_right.logo
             span.logo_text C
-
-
     block content
     include close
