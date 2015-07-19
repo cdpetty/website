@@ -57,10 +57,10 @@ exports.create_post = function(req, res){
 };
 
 exports.create_post_post = function(req, res){
-  var storage = require('../storage'),
+  if (req.body.password === 'pass'){
+    var storage = require('../storage'),
     fs = require('fs');
-  if (req.files.body && req.body.title && req.body.description && req.body.password){
-    if (req.body.password === 'pass'){
+    if (req.files.body && req.body.title && req.body.description){
       fs.readFile(req.files.body.path, function (err, data) {
         if (err){
           res.send('Error reading file from user: ' + err);
@@ -76,14 +76,14 @@ exports.create_post_post = function(req, res){
           });
         }
       });
-    }
-    else{
-      res.send('Password: ' + req.body.password + ' was incorrect.');
-    }
-  } else if (req.body.delete){
+    } else if (req.body.delete){
       storage.delete_post(req.body.delete, function(err){
         if (err) res.send('Error deleting post:' + err);
         else res.send('Post: ' + req.body.delete + ' deleted.')
       });
+    }
+  }
+  else{
+    res.send('Password: ' + req.body.password + ' was incorrect.');
   }
 };
