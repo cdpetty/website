@@ -6,3 +6,6 @@ release
 
 # Node Mondules
 node_modules
+
+# OS X Files
+.DS_Store
