@@ -11,7 +11,8 @@
     "jsonfile": "~2.2.1",
     "marked": "~0.3.3",
     "pygmentize-bundled": "~2.3.0",
-    "jsesc": "~0.5.0"
+    "jsesc": "~0.5.0",
+    "universal-analytics": "~0.3.8"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

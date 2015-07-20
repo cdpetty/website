@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var ua = require('universal-analytics');
 
 var app = express();
 
@@ -28,23 +29,6 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'release')));
-
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
-
-app.get('/', routes.index);
-app.get('/posts', routes.posts);
-app.get('/about', routes.about);
-app.get('/projects', routes.projects);
-app.get('/clayton', routes.clayton);
-app.get('/post/:post_name', routes.post);
-app.get('/create_post', routes.create_post);
-app.post('/create_post', routes.create_post_post);
-// app.get('/resume', function(req,res){
-//   res.download(path.join(__dirname, 'Resume/CPetty_Resume.pdf'));
-// });
 app.use(function(req, res, next) {
     // respond with html page
     if (req.accepts('html')) {
@@ -65,6 +49,24 @@ app.use(function(req, res, next) {
     // default to plain-text. send()
     res.type('txt').send('Not found');
 })
+
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+}
+
+app.get('/', routes.index);
+app.get('/posts', routes.posts);
+app.get('/about', routes.about);
+app.get('/projects', routes.projects);
+app.get('/clayton', routes.clayton);
+app.get('/post/:post_name', routes.post);
+app.get('/create_post', routes.create_post);
+app.post('/create_post', routes.create_post_post);
+// app.get('/cdp', routes.cdp);
+// app.get('/resume', function(req,res){
+//   res.download(path.join(__dirname, 'Resume/CPetty_Resume.pdf'));
+// });
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
