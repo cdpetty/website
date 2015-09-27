@@ -25,32 +25,44 @@ exports.get_posts = function(short, callback){
             return callback(err);
         } else{
             var json = j;
+            var posts_arr = [];
             Object.keys(json).forEach(function(key){
                 if (short) delete json[key].body;
                 // var dateObj = new Date(json[key].time);
                 // delete json[key].time;
                 // json[key].time = dateObj;
-                json[key].time = new Date(json[key].time).toDateString();
-
+                json[key].sortTime = new Date(json[key].time);
+                json[key].time = json[key].sortTime.toDateString();
+                posts_arr.push(json[key]);
             });
-            return callback(null, json);
+            posts_arr.sort(function(a, b){
+            //    return a.sortTime - b.sortTime;
+                return b.sortTime - a.sortTime;
+            });
+            console.log('json:', json);
+            return callback(null, posts_arr, json);
         }
     });
 };
 
 exports.get_post = function(title, callback){
-    exports.get_posts(false, function(err, json){
+    exports.get_posts(false, function(err, json_arr, json){
         if (err){
             return callback(err);
         } else{
           // console.log(json[title].time);
+            console.log(title);
+            console.log('jsonA_arr:', json_arr);
+            console.log('json:', json);
+            console.log('should be a post here:', title);
+            console.log('should be a post here:', json[title]);
             return callback(null, json[title]);
         }
     });
 };
 
 exports.save_post = function(title, description, body, callback){
-    exports.get_posts(false, function(err, json){
+    exports.get_posts(false, function(err, json_arr, json){
         if (err){
             return callback(err);
         } else{
@@ -68,7 +80,7 @@ exports.save_post = function(title, description, body, callback){
 };
 
 exports.delete_post = function(title, callback){
-  exports.get_posts(false, function(err, json){
+  exports.get_posts(false, function(err, json_arr, json){
       if (err) callback(err);
       else{
           delete json[title];

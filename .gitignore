@@ -9,3 +9,6 @@ node_modules
 
 # OS X Files
 **/.DS_Store
+
+# Password
+.password

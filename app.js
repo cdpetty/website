@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var fs = require('fs');
 
 var app = express();
 
@@ -54,6 +55,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+
+
 app.get('/', routes.index);
 app.get('/posts', routes.posts);
 app.get('/about', routes.about);
@@ -63,9 +66,9 @@ app.get('/post/:post_name', routes.post);
 app.get('/create_post', routes.create_post);
 app.post('/create_post', routes.create_post_post);
 // app.get('/cdp', routes.cdp);
-// app.get('/resume', function(req,res){
-//   res.download(path.join(__dirname, 'Resume/CPetty_Resume.pdf'));
-// });
+app.get('/resume', function(req,res){
+  res.download(path.join(__dirname, 'public/files/CPetty_Resume.pdf'));
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

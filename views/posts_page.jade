@@ -1,12 +1,18 @@
 extends layout
 
 block content
-  .posts_wrapper
-    each val, index in posts 
-      .post
-        span.post_name
-          a(href='/post/' + index)=val.title
-          span.post_subtitle=val.description
+    .posts_wrapper
+        each val in posts
+            .post
+                span.post_name
+                    a(href='/post/' + val.title)=val.title
+                    span.post_subtitle=val.description
+                
+    //- each val, index in posts 
+    //-   .post
+    //-     span.post_name
+    //-       a(href='/post/' + index)=val.title
+    //-       span.post_subtitle=val.description
     //- .post
     //-   span.post_name
     //-     a(href='/post') Clayton's First Post
