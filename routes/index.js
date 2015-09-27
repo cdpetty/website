@@ -57,7 +57,7 @@ exports.create_post = function(req, res){
 };
 
 exports.create_post_post = function(req, res){
-  if (req.body.password === 'pass'){
+  if (req.body.password === "Website"){
     var storage = require('../storage'),
     fs = require('fs');
     if (req.files.body && req.body.title && req.body.description){

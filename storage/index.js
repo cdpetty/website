@@ -43,7 +43,6 @@ exports.get_post = function(title, callback){
         if (err){
             return callback(err);
         } else{
-          console.log(json);
           // console.log(json[title].time);
             return callback(null, json[title]);
         }
