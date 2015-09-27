@@ -2,9 +2,12 @@ extends layout
 
 block content
   //- .disclaimer
-    span.disclaimer_text.     
-      <center><a class='disclaimer_tag'>&lt;Disclaimer&gt;</a></center> I have this problem.  Its a small problem with a big impact. I just can't seem to finish projects. I've started dozens of projects in the past, and no matter how far I get, I seem to loose interest somewhere towards the end. As a result, some (most) of my projects are lacking a real shine. I apologize in advance. <center><a class='disclaimer_tag'>&lt;/Disclaimer&gt;</a></center>
+    //- span.disclaimer_text.     
   .projects_wrapper
+    .project
+      span.project_name 
+        a(href='http://github.com/cdpetty/Chatter')  Website
+        span.project_subtitle This Website
     .project
       span.project_name
         a(href='http://github.com/cdpetty/Clogg') Clogg
@@ -14,17 +17,13 @@ block content
         a(href='http://github.com/cdpetty/Panning') Panning
         span.project_subtitle Basic port scanner
     .project
-      span.project_name 
-        a(href='http://github.com/cdpetty/APGrader')  APGrader
-        span.project_subtitle AP comp sci lab grader
-    .project
       span.project_name
         a(href='http://github.com/cdpetty/One') One
         span.project_subtitle Mediafire terminal client
     .project
       span.project_name 
         a(href='http://github.com/cdpetty/PySolver') PySolver
-        span.project_subtitle Solve python equations
+        span.project_subtitle RPN in Python
     .project
       span.project_name
         a(href='http://github.com/cdpetty/TTE') TTE
