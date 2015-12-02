@@ -2,6 +2,7 @@
   padding: 12px;
   background-color: #F7FAFB;
   border: 1px solid rgba(4, 80, 126, 0.48);
+  overflow-x: scroll;
 }
 blockquote{
   border-left: 2px solid rgb(0, 3, 231);
