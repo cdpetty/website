@@ -11,7 +11,7 @@ node_modules
 **/.DS_Store
 
 # Password
-.password
+.password.txt
 
 # Posts
 storage/store/*
