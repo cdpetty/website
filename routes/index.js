@@ -12,6 +12,7 @@ exports.index = function(req, res){
 
 exports.posts =  function(req,res){
     storage.get_posts(true, function(err, posts, json){
+        //console.log('THESE ARE THE POSTS:', posts);
         if (err) res.send('Error:' + err);
         res.render('posts_page', { posts: posts });
     });
@@ -32,7 +33,7 @@ exports.clayton = function(req,res){
 exports.post = function(req,res){
     var post_name = req.params.post_name;
     storage.get_post(post_name, function(err, post){
-        console.log('Posts:', post);
+        //console.log('Posts:', post);
         if (err) res.send(err);
         else{
             // console.log(post);
@@ -61,9 +62,9 @@ exports.create_post = function(req, res){
 exports.create_post_post = function(req, res){
     fs.readFile('.password.txt', 'utf8', function(err, password){
         password = password.trim();
-        console.log('Password:', password, '<');
-        console.log('Needed Password:', password, '<');
-        console.log('Received Password:', req.body.password, '<');
+        // console.log('Password:', password, '<');
+        // console.log('Needed Password:', password, '<');
+        // console.log('Received Password:', req.body.password, '<');
         if (req.body.password === password){
             var storage = require('../storage'),
             fs = require('fs');

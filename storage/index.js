@@ -32,14 +32,15 @@ exports.get_posts = function(short, callback){
                 // delete json[key].time;
                 // json[key].time = dateObj;
                 json[key].sortTime = new Date(json[key].time);
-                json[key].time = json[key].sortTime.toDateString();
+                json[key].displayTime = json[key].sortTime.toDateString();
+                //json[key].time = json[key].sortTime.toDateString();
                 posts_arr.push(json[key]);
             });
             posts_arr.sort(function(a, b){
             //    return a.sortTime - b.sortTime;
                 return b.sortTime - a.sortTime;
             });
-            console.log('json:', json);
+            //console.log('json:', json);
             return callback(null, posts_arr, json);
         }
     });
@@ -51,11 +52,11 @@ exports.get_post = function(title, callback){
             return callback(err);
         } else{
           // console.log(json[title].time);
-            console.log(title);
-            console.log('jsonA_arr:', json_arr);
-            console.log('json:', json);
-            console.log('should be a post here:', title);
-            console.log('should be a post here:', json[title]);
+            // console.log(title);
+            // console.log('jsonA_arr:', json_arr);
+            // console.log('json:', json);
+            // console.log('should be a post here:', title);
+            // console.log('should be a post here:', json[title]);
             return callback(null, json[title]);
         }
     });
