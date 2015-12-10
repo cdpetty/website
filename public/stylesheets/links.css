@@ -1,0 +1,12 @@
+.links_header{
+    text-align: center;
+    font-size: 51px;
+}
+
+.links_description{
+    text-align: center;
+    outline: 1px solid black;
+    border: 2px solid #00a;
+    background-color: rgba(0, 0, 170, 0.15);
+    padding: 10px;
+}

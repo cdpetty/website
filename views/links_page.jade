@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    
+    .posts_wrapper
+        //- .links_header 
+        //-     a Hall of Links
+        //- .links_description.
+        //-     A showcase of anything I find interesting.
+        //- <a href ="/links">This</a> page is dedicated to resources, articles, videos, books, etc that I find particularly informative, informational, interesting, etc.
+        //- Hopefully, I will be adding to this page as I encounter worthy articles in the wild. <hr/>
+        //- <br>If you have something you think is worthy of the "Hall of Links", please email me.
+        each val in links
+            .post
+                span.post_name
+                    a(href=val.link)=val.title
+                    span.post_subtitle=val.description

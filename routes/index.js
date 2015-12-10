@@ -18,6 +18,14 @@ exports.posts =  function(req,res){
     });
 };
 
+exports.links =  function(req,res){
+    storage.get_links(function(err, links){
+        console.log('THESE ARE THE LINKS:', links);
+        if (err) res.send('Error:' + err);
+        res.render('links_page', { links: links });
+    });
+};
+
 exports.about = function(req,res){
     res.render('about_page');
 };
@@ -92,6 +100,36 @@ exports.create_post_post = function(req, res){
             }
         }
         else{
+            res.send('Password: ' + req.body.password + ' was incorrect.');
+        }
+
+    });
+}
+
+exports.create_link = function(req, res){
+    res.render('create_link');
+};
+
+exports.create_link_post = function(req, res){
+    fs.readFile('.password.txt', 'utf8', function(err, password){
+        password = password.trim();
+        // console.log('Password:', password, '<');
+        // console.log('Needed Password:', password, '<');
+        // console.log('Received Password:', req.body.password, '<');
+        if (req.body.password === password){
+            var storage = require('../storage');
+            if (req.body.title && req.body.description && req.body.link){
+                storage.save_link(req.body.title, req.body.description, req.body.link, function(err){
+                    console.log('Title:', req.body.title, 'Desc', req.body.description, 'link:', req.body.link);
+                    if (err){
+                        res.send('Error saving link: ' + err);
+                    }
+                    else{
+                        res.send('Link saved: ' + req.body.title);
+                    }
+                });
+            }
+        } else{
             res.send('Password: ' + req.body.password + ' was incorrect.');
         }
 

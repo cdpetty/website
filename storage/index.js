@@ -18,6 +18,7 @@ marked.setOptions({
 });
 
 var postsPath = path.join(__dirname, 'store/posts.txt');
+var linksPath = path.join(__dirname, 'store/links.txt');
 
 exports.get_posts = function(short, callback){
     jsonfile.readFile(postsPath, function(err, j){
@@ -89,3 +90,31 @@ exports.delete_post = function(title, callback){
       }
   })
 };
+
+exports.get_links = function(callback){
+    jsonfile.readFile(linksPath, function(err, json){
+        if (err){
+            return callback(err);
+        } else{
+            return callback(null, json.links);
+        }
+    });
+};
+
+exports.save_link = function(title, description, link, callback){
+    exports.get_links(function(err, links){
+        if (err) return callback(err);
+        else {
+            if (err) return callback(err);
+            else {
+                console.log('json:', links);
+                links.push({
+                    title: title,
+                    description: description,
+                    link: link
+                })
+                jsonfile.writeFile(linksPath, {links: links}, callback);
+            }
+        }
+    });
+}

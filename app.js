@@ -59,12 +59,15 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/posts', routes.posts);
+app.get('/links', routes.links);
 app.get('/about', routes.about);
 app.get('/projects', routes.projects);
 app.get('/clayton', routes.clayton);
 app.get('/post/:post_name', routes.post);
 app.get('/create_post', routes.create_post);
 app.post('/create_post', routes.create_post_post);
+app.get('/create_link', routes.create_link);
+app.post('/create_link', routes.create_link_post);
 // app.get('/cdp', routes.cdp);
 app.get('/resume', function(req,res){
   res.download(path.join(__dirname, 'public/files/CPetty_Resume.pdf'));

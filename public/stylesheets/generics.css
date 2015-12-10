@@ -84,3 +84,7 @@ a:hover{
   margin-top: 16px;
   margin-left: 174px;
 }
+
+.selected_nav{
+    background-color: rgba(95, 95, 95, 0.64);
+}
