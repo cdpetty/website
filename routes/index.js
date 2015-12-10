@@ -22,7 +22,7 @@ exports.links =  function(req,res){
     storage.get_links(function(err, links){
         console.log('THESE ARE THE LINKS:', links);
         if (err) res.send('Error:' + err);
-        res.render('links_page', { links: links });
+        res.render('links_page', { links: links.reverse() });
     });
 };
 
