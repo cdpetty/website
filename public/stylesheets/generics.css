@@ -27,6 +27,16 @@ a:hover{
 }
 
 @font-face {
+	font-family: ARSMasquetteReg;
+	src: url('/fonts/ARSMasquetteReg.otf');
+}
+
+@font-face {
+	font-family: frutiger;
+	src: url('/fonts/frutiger.otf');
+}
+
+@font-face {
 	font-family: vollkorn;
 	src: url('/fonts/vollkorn.ttf');
 }
