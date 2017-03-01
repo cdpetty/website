@@ -76,13 +76,23 @@ exports.create_post_post = function(req, res){
         if (req.body.password === password){
             var storage = require('../storage'),
             fs = require('fs');
-            if (req.files.body && req.body.title && req.body.description){
+
+            if (req.body.link && req.body.title && req.body.description){
+                storage.save_post(req.body.title, req.body.description, null, req.body.link, function(err){
+                    if (err){
+                        res.send('Error saving post: ' + err);
+                    }
+                    else{
+                        res.send('Post saved: ' + req.body.title);
+                    }
+                });
+            } else if (req.files.body && req.body.title && req.body.description){
                 fs.readFile(req.files.body.path, function (err, data) {
                     if (err){
                         res.send('Error reading file from user: ' + err);
                     }
                     else{
-                        storage.save_post(req.body.title, req.body.description, data.toString(), function(err){
+                        storage.save_post(req.body.title, req.body.description, data.toString(), null, function(err){
                             if (err){
                                 res.send('Error saving post: ' + err);
                             }

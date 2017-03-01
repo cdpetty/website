@@ -5,6 +5,7 @@ block content
     form(action='/create_post', method='post', enctype='multipart/form-data')
       input#create_input(type='text', name='title', placeholder='Title')
       input#create_input(type='text', name='description', placeholder='Description')
+      input#create_input(type='text', name='link', placeholder='Link to Post')
       span#left.label Body:
       input#right(type='file', name='body')
       input#create_input(type='password', name='password', placeholder='Password')

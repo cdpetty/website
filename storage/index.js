@@ -63,22 +63,35 @@ exports.get_post = function(title, callback){
     });
 };
 
-exports.save_post = function(title, description, body, callback){
-    exports.get_posts(false, function(err, json_arr, json){
-        if (err){
-            return callback(err);
-        } else{
-            marked(body, function (err, html) {
-              if (err) return callback(err);
-              else{
+exports.save_post = function(title, description, body, link, callback){
+    if (link){
+        exports.get_posts(false, function(err, json_arr, json){
+            if (err){
+                return callback(err);
+            } else{
                 // json[title] = { title: title, description: description, body: jsesc(html, {json: true}), time: new Date(Date.now()) }
                 // json[title] = { title: title, description: description, body: escape(html), time: new Date(Date.now()) }
-                json[title] = { title: title, description: description, body: html, time: new Date(Date.now()) }
+                json[title] = { title: title, description: description, body: null, link: link, time: new Date(Date.now()) }
                 jsonfile.writeFile(postsPath, json, callback);
-              }
-            });
-        }
-    });
+            }
+        });
+    } else {
+        exports.get_posts(false, function(err, json_arr, json){
+            if (err){
+                return callback(err);
+            } else{
+                marked(body, function (err, html) {
+                    if (err) return callback(err);
+                    else{
+                        // json[title] = { title: title, description: description, body: jsesc(html, {json: true}), time: new Date(Date.now()) }
+                        // json[title] = { title: title, description: description, body: escape(html), time: new Date(Date.now()) }
+                        json[title] = { title: title, description: description, body: html, link: null, time: new Date(Date.now()) }
+                        jsonfile.writeFile(postsPath, json, callback);
+                    }
+                });
+            }
+        });
+    }
 };
 
 exports.delete_post = function(title, callback){

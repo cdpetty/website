@@ -5,8 +5,12 @@ block content
         each val in posts
             .post
                 span.post_name
-                    a(href='/post/' + val.title)=val.title
-                    span.post_subtitle=val.description
+                    if val.link
+                        a(href=val.link)=val.title
+                        span.post_subtitle=val.description
+                    else   
+                        a(href='/post/' + val.title)=val.title
+                        span.post_subtitle=val.description
                 
     //- each val, index in posts 
     //-   .post
