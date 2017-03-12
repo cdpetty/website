@@ -73,6 +73,19 @@ app.get('/resume', function(req,res){
   res.download(path.join(__dirname, 'public/files/CPetty_Resume.pdf'));
 });
 
+app.get('/presi1', function(req,res){
+  res.download(path.join(__dirname, 'public/files/presi1.pptx'));
+});
+app.get('/presi2', function(req,res){
+  res.download(path.join(__dirname, 'public/files/presi2.pptx'));
+});
+app.get('/presi3', function(req,res){
+  res.download(path.join(__dirname, 'public/files/presi3.pptx'));
+});
+app.get('/presi4', function(req,res){
+  res.download(path.join(__dirname, 'public/files/presi4.pptx'));
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
